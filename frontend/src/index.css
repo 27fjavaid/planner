@@ -1,0 +1,14 @@
+@import "tailwindcss";
+.ProseMirror {
+  min-height: 300px;
+  outline: none;
+  padding: 4px 0;
+}
+
+.ProseMirror p.is-editor-empty:first-child::before {
+  content: "Start writing...";
+  color: #9ca3af;
+  pointer-events: none;
+  float: left;
+  height: 0;
+}
