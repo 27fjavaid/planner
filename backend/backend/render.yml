@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: planner-backend
+    runtime: java
+    rootDir: backend/backend
+    buildCommand: "./mvnw clean package -DskipTests"
+    startCommand: "java -jar target/*.jar"
+    envVars:
+      - key: DATABASE_URL
+        value: your_database_url
+      - key: DATABASE_USERNAME
+        value: postgres
+      - key: DATABASE_PASSWORD
+        value: Zainab2005
