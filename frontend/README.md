@@ -1,16 +1,69 @@
-# React + Vite
+# Planner App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack Notion-style productivity app built with Spring Boot and React.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Authentication** — Secure JWT-based login and registration
+- **Pages & Notes** — Create and edit pages with a rich text editor
+- **Sidebar Navigation** — Collapsible page tree with nested subpages
+- **Kanban Board** — Drag-and-drop task management with To Do / In Progress / Done columns
+- **Auto-save** — Pages save automatically as you type
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Backend**
+- Java 21 + Spring Boot 3
+- Spring Security + JWT Authentication
+- Spring Data JPA + Hibernate
+- PostgreSQL
 
-## Expanding the ESLint configuration
+**Frontend**
+- React + Vite
+- Tailwind CSS
+- TipTap Rich Text Editor
+- Axios
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Getting Started
+
+### Prerequisites
+- Java 21+
+- PostgreSQL
+- Node.js 18+
+
+### Backend Setup
+```bash
+cd backend/backend
+# Create a PostgreSQL database called planner_db
+# Update src/main/resources/application.properties with your DB credentials
+./mvnw spring-boot:run
+```
+
+### Frontend Setup
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+The app will be available at `http://localhost:5173`
+
+## Project Structure
+
+```
+planner/
+├── backend/          # Spring Boot REST API
+│   └── src/
+│       └── main/java/com/planner/backend/
+│           ├── controller/   # REST endpoints
+│           ├── model/        # JPA entities
+│           ├── repository/   # Data access layer
+│           ├── service/      # Business logic
+│           └── config/       # Security configuration
+└── frontend/         # React application
+    └── src/
+        ├── components/   # Reusable UI components
+        ├── context/      # Auth context
+        ├── pages/        # Login, Register, Dashboard, Kanban
+        └── services/     # API client
+```
