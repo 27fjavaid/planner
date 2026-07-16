@@ -15,7 +15,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/api/pages")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "*")
 public class PageController {
 
     private final PageService pageService;
