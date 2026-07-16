@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import api from "../services/api";
-
+import { useNavigate } from 'react-router-dom';
 const COLUMNS = [
   { id: "TODO", label: "To Do" },
   { id: "IN_PROGRESS", label: "In Progress" },
@@ -14,6 +14,7 @@ export default function Kanban() {
   const [showForm, setShowForm] = useState(false);
   const [newTask, setNewTask] = useState({ title: "", description: "", priority: "MEDIUM" });
   const [draggedTask, setDraggedTask] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchTasks();
@@ -72,7 +73,15 @@ export default function Kanban() {
   return (
     <div className="p-6">
       <div className="flex items-center justify-between mb-6">
-        <h1 className="text-2xl font-semibold text-gray-800">Kanban Board</h1>
+        <div className="flex items-center gap-3">
+          <button
+            onClick={() => navigate(-1)}
+            className="text-gray-500 hover:text-gray-800 text-sm"
+          >
+            ← Back
+          </button>
+          <h1 className="text-2xl font-semibold text-gray-800">Kanban Board</h1>
+        </div>
         <button
           onClick={() => setShowForm(true)}
           className="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-indigo-700 transition"
