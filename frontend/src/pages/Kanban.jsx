@@ -80,7 +80,7 @@ export default function Kanban() {
           >
             ← Back
           </button>
-          <h1 className="text-2xl font-semibold text-gray-800">Kanban Board</h1>
+         <h1 className="text-2xl font-semibold text-gray-800">To Do List</h1>
         </div>
         <button
           onClick={() => setShowForm(true)}
