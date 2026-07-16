@@ -75,11 +75,11 @@ export default function Sidebar({ activePage, onPageSelect, onNewPage }) {
       <div className="p-4 border-b border-gray-200">
         <h1 className="text-sm font-semibold text-gray-800">My Planner</h1>
         <a
-          href="/kanban"
-          className="flex items-center gap-2 mt-3 text-sm text-gray-600 hover:text-indigo-600 hover:bg-gray-100 px-2 py-1.5 rounded-lg transition"
-        >
-          📋 Kanban Board
-        </a>
+         href="/kanban"
+  className="flex items-center gap-2 mt-3 text-sm text-gray-600 hover:text-indigo-600 hover:bg-gray-100 px-2 py-1.5 rounded-lg transition"
+>
+  📋 To Do List
+</a>
       </div>
       <div className="flex-1 overflow-y-auto p-2">
         {pages.map((page) => renderPage(page))}
